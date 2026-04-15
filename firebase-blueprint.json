@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Book": {
+      "title": "Book",
+      "description": "Metadata and AI insights for a book",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviews": { "type": "number" },
+        "description": { "type": "string" },
+        "url": { "type": "string" },
+        "genre": { "type": "string" },
+        "summary": { "type": "string" },
+        "sentiment": { "type": "string" },
+        "recommendations": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "author", "url"]
+    },
+    "Chat": {
+      "title": "Chat Message",
+      "description": "A message in a Q&A session",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["user", "bot"] },
+        "content": { "type": "string" },
+        "citation": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["role", "content", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/books/{bookId}": {
+      "schema": "Book",
+      "description": "Collection of processed books"
+    },
+    "/chats/{chatId}": {
+      "schema": "Chat",
+      "description": "History of Q&A interactions"
+    }
+  }
+}

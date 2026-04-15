@@ -1,0 +1,6 @@
+{
+  "name": "DocIntel: Book Intelligence Platform",
+  "description": "A full-stack platform for scraping book data, generating AI insights, and intelligent Q&A using RAG.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Insights", "RAG Pipeline", "Web Scraping"]
+}
